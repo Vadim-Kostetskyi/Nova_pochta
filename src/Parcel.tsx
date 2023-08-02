@@ -1,4 +1,7 @@
-const Parcel = () => {
+import React from "react"
+
+
+const Parcel: React.FunctionComponent = () => {
     return (
     <>
         <div className='get'>
