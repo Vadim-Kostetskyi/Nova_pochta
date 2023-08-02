@@ -1,13 +1,89 @@
-body {
+ul {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  list-style: none;
+  display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  margin: 0;
+}
+
+.App {
+  justify-content: start;
+  align-items: start;
+}
+.operation {
+  margin-bottom: 30px;
+}
+.check {
+  width: 40vw;
+  padding: 15px 5px;
+  margin-right: 25px;
+
+  @media screen and (min-width: 480px) {
+    width: 190px;
+  }
+}
+.offices {
+  width: 40vw;
+  padding: 15px 5px;
+
+  @media screen and (min-width: 480px) {
+    width: 190px;
+  }
+}
+
+.get {
+  display: block;
+  margin-bottom: 40px;
+}
+.input {
+  padding: 5px 0;
+  width: 50vw;
+  margin-right: 2vw;
+
+  @media screen and (min-width: 480px) {
+    width: 240px;
+  }
+}
+.get-btn {
+  padding: 5px 5vw;
+  border-radius: 10px;
+  background-color: #ffa500;
+
+  @media screen and (min-width: 480px) {
+    padding: 5px 25px;
+    width: 145px;
+  }
+}
+
+.info {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+.details {
+  padding: 10px;
+  margin-bottom: 25px;
+  background-color: #eeeeee;
+  border: 1px solid black;
+
+  @media screen and (min-width: 768px) {
+    width: 60vw;
+    margin-right: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 720px;
+  }
+}
+.history {
+  /* max-width: 200px; */
+  padding: 10px;
+  background-color: #eeeeee;
+  border: 1px solid black;
+
+  @media screen and (min-width: 768px) {
+    width: 150px;
+  }
 }

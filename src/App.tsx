@@ -5,15 +5,24 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <button>Перевірити ТТН</button>
-      <button>Список відділень</button>
-      <input type="text" />
-      <button>Get status TTN</button>
-      <div>
-        <p>Дані посилки</p>
+      <div className='operation'>
+      <button className='check'>Перевірити ТТН</button>
+      <button className='offices'>Список відділень</button>
       </div>
-      <div>
-        <p>Історія</p>
+      <div className='get'>
+        <input type="text" className='input' />
+      <button className='get-btn'>Get status TTN</button>
+      </div>
+      <div className='info'>
+      <div className='details'>
+        <p className='details-text'>Дані посилки</p>
+      </div>
+      <div className='history'>
+          <p className='history-text'>Історія</p>
+          <ul>
+            <li>20400048799002</li>
+          </ul>
+      </div>
       </div>
     </div>
   );
