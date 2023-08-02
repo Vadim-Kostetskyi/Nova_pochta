@@ -16,15 +16,7 @@ p {
 .operation {
   margin-bottom: 30px;
 }
-.check {
-  width: 40vw;
-  padding: 15px 5px;
-  margin-right: 25px;
-
-  @media screen and (min-width: 480px) {
-    width: 190px;
-  }
-}
+.check,
 .offices {
   width: 40vw;
   padding: 15px 5px;
@@ -32,6 +24,13 @@ p {
   @media screen and (min-width: 480px) {
     width: 190px;
   }
+}
+.check {
+  margin-right: 25px;
+}
+.check:focus,
+.offices:focus {
+  background-color: #808080;
 }
 
 .get {
@@ -78,7 +77,6 @@ p {
   }
 }
 .history {
-  /* max-width: 200px; */
   padding: 10px;
   background-color: #eeeeee;
   border: 1px solid black;
@@ -86,4 +84,8 @@ p {
   @media screen and (min-width: 768px) {
     width: 150px;
   }
+}
+.history-text {
+  display: block;
+  margin-bottom: 15px;
 }

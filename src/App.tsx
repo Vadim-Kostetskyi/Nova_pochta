@@ -18,9 +18,9 @@ function App() {
         <p className='details-text'>Дані посилки</p>
       </div>
       <div className='history'>
-          <p className='history-text'>Історія</p>
-          <ul>
-            <li>20400048799002</li>
+          <strong className='history-text'>Історія</strong>
+          <ul className='history-list'>
+            <li className='history-item'>20400048799002</li>
           </ul>
       </div>
       </div>
