@@ -2,7 +2,6 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  display: flex;
 }
 
 p {
@@ -64,7 +63,6 @@ p {
 }
 .details {
   padding: 10px;
-  margin-bottom: 25px;
   background-color: #eeeeee;
   border: 1px solid black;
 
