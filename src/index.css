@@ -74,6 +74,10 @@ p {
     width: 720px;
   }
 }
+.details-text {
+  display: block;
+  margin-bottom: 15px;
+}
 .history {
   padding: 10px;
   background-color: #eeeeee;
@@ -85,5 +89,9 @@ p {
 }
 .history-text {
   display: block;
+  margin-bottom: 10px;
+}
+
+.city-form {
   margin-bottom: 15px;
 }

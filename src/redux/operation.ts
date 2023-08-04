@@ -3,11 +3,31 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.novaposhta.ua/v2.0/json/';
 
-export const getInfo: any = createAsyncThunk('get info', async (information: any) => {
-    // console.log(information);
-    
+interface Information{
+    "apiKey": number,
+    "modelName": string,
+    "calledMethod": string,
+    "methodProperties": {
+    "FindByString" : string,
+    "Limit":string
+    "Documents" :   [{
+                        "DocumentNumber":string,
+                    }]
+    }
+}
+
+export const getInfo: any = createAsyncThunk('get info', async (information: Information) => {
     try {
-        const { data } = await axios.get('', information);
+        const { data } = await axios.post('/', information);
+        return data;
+    } catch (error: any) {
+        throw new error(error);
+    }
+})
+
+export const getStreet: any = createAsyncThunk('get street', async (information: Information) => {    
+    try {
+        const { data } = await axios.post('/', information);
         return data;
     } catch (error: any) {
         throw new error(error);

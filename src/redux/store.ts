@@ -7,8 +7,16 @@ import { reducer } from './slice';
 
 export interface CounterState{
      counter: {
-    value: number[]
+       value: number[]
+       postData: object
+       data: object[]
   };
+}
+
+export interface PostData{
+  Status: string
+  CityDescription: string
+  Description: string
 }
 
 const persistConfig = {
@@ -31,7 +39,5 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch

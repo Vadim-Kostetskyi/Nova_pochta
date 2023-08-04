@@ -1,14 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { getInfo } from './operation'
+import { getInfo, getStreet } from './operation'
 
 export interface CounterState {
   value: number[]
-  data: string
+  postData: object,
+  data: string[]
 }
 
 const initialState: CounterState = {
   value: [],
-  data: ''
+  postData: {},
+  data: []
 }
 
 export const slice = createSlice({
@@ -31,8 +33,11 @@ export const slice = createSlice({
   },
 
    extraReducers: {
-     [getInfo.fulfilled](state, action: PayloadAction<{data: { status: string }}>) {
-       state.data = action.payload.data.status
+     [getInfo.fulfilled](state, action: PayloadAction<{data:  object[] }>) {
+       state.postData = action.payload.data[0]
+     },
+     [getStreet.fulfilled](state, action: PayloadAction<{ data: string[]  }>) {
+       state.data = action.payload.data
     },
   }
 })
