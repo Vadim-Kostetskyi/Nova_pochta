@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Parcel from './Parcel';
-import Offices from './Offices';
+import Parcel from './components/Parcel';
+import Offices from './components/Offices';
 import './App.css';
 
 const App: React.FunctionComponent = () => {

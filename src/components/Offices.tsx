@@ -4,8 +4,8 @@ import type { Dispatch } from 'redux'
 import { useState } from "react"
 
 
-import { getStreet } from "./redux/operation"
-import { PostData } from "./redux/store"
+import { getStreet } from "../redux/operation"
+import { PostData } from "../redux/store"
 
 const Offices: React.FunctionComponent = () => {
     const dispatch: Dispatch = useDispatch()

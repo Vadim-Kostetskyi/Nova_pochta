@@ -1,3 +1,7 @@
+body {
+  background-color: #f8f8f8;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -13,12 +17,22 @@ p {
   align-items: start;
 }
 .operation {
+  width: 100%;
+
   margin-bottom: 30px;
+  background-color: #e7493e;
 }
 .check,
 .offices {
   width: 40vw;
   padding: 15px 5px;
+
+  border: none;
+
+  border-bottom: 2px solid #e7493e;
+
+  color: #fff1ea;
+  background-color: #e7493e;
 
   @media screen and (min-width: 480px) {
     width: 190px;
@@ -28,18 +42,22 @@ p {
   margin-right: 25px;
 }
 .check:focus,
-.offices:focus {
-  background-color: #808080;
+.check:hover,
+.offices:focus,
+.offices:hover {
+  border-bottom: 2px solid #3e4450;
 }
 
 .get {
-  display: block;
+  display: flex;
   margin-bottom: 40px;
 }
 .input {
   padding: 5px 0;
   width: 50vw;
   margin-right: 2vw;
+
+  color: #020024;
 
   @media screen and (min-width: 480px) {
     width: 240px;
@@ -48,12 +66,17 @@ p {
 .get-btn {
   padding: 5px 5vw;
   border-radius: 10px;
-  background-color: #ffa500;
+  color: #fff1ea;
+  background-color: #3e4450;
 
   @media screen and (min-width: 480px) {
     padding: 5px 25px;
     width: 145px;
   }
+}
+.get-btn:hover,
+.get-btn:focus {
+  background-color: #ac062d;
 }
 
 .info {
@@ -87,9 +110,21 @@ p {
     width: 150px;
   }
 }
+.history-box {
+  display: flex;
+  justify-content: space-between;
+}
 .history-text {
   display: block;
   margin-bottom: 10px;
+}
+.history-clear {
+  color: #fff1ea;
+  background-color: #da281c;
+}
+.history-clear:focus,
+.history-clear:hover {
+  background-color: #ae2117;
 }
 
 .city-form {

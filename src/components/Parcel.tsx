@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import type { Dispatch } from 'redux'
 
-import { getInfo } from "./redux/operation"
-import { saveTtn, clearTtn } from "./redux/slice"
-import { CounterState, PostData } from "./redux/store"
+import { getInfo } from "../redux/operation"
+import { saveTtn, clearTtn } from "../redux/slice"
+import { CounterState, PostData } from "../redux/store"
+
 
 
 const Parcel: React.FunctionComponent = () => {
@@ -68,37 +69,30 @@ const Parcel: React.FunctionComponent = () => {
         dispatch(saveTtn(Number(formData)))
   }    
 
- const validateInput = (event: React.ChangeEvent<HTMLInputElement>) =>{
-     const inputElement = event.target;
-     inputElement.value = inputElement.value.replace(/\D/g, '');
-     const inputValue = inputElement.value;
-
-  if (inputValue.length > 14) {
-    inputElement.value = inputValue.slice(0, 14);
-     } 
-}
-
 
 
     return (
     <>
         <form className='get' onSubmit={handleSubmit}>
-            <input type="text" name="ttn" className='input' value={formData} onChange={handleInputChange}/>
-            <button className='get-btn' type="submit" >Get status TTN</button>
+                <input type="text" name="ttn" className='input' value={formData} onChange={handleInputChange}/>
+                <button className='get-btn' type="submit" >Get status TTN</button>
+                 
         </form>
-        <div className='info'>
+        <div className='info'> 
             <div className='details'>
                     <strong className='details-text'>Дані посилки</strong>
                     <p>{status}</p>
             </div>
             <div className='history'>
-                <strong className='history-text'>Історія</strong>
-                    <button onClick={clearList}>clear</button>
+                    <div className="history-box">
+                    <strong className='history-text'>Історія</strong>
+                    <button onClick={clearList} className="history-clear">clear</button>
+                </div>
                     
                 <ul className='history-list'>
                     {ttn.map(num => <li key={num}>{num}</li>)}
                 </ul>
-            </div>
+                </div>
         </div>
     </>
     )
