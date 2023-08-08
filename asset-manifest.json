@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nova_pochta/static/css/main.2f2a2a5d.css",
+    "main.js": "/nova_pochta/static/js/main.47d7b86a.js",
+    "static/js/787.726d9e86.chunk.js": "/nova_pochta/static/js/787.726d9e86.chunk.js",
+    "index.html": "/nova_pochta/index.html",
+    "main.2f2a2a5d.css.map": "/nova_pochta/static/css/main.2f2a2a5d.css.map",
+    "main.47d7b86a.js.map": "/nova_pochta/static/js/main.47d7b86a.js.map",
+    "787.726d9e86.chunk.js.map": "/nova_pochta/static/js/787.726d9e86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f2a2a5d.css",
+    "static/js/main.47d7b86a.js"
+  ]
+}
