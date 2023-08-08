@@ -15,7 +15,7 @@ const Parcel: React.FunctionComponent = () => {
     const [ttn, setTtn] = useState<number[]>([])
     const [status, setStatus] = useState<string>('')
     const [formData, setFormData] = useState<number>(0);
-    const [historyHidden, setHistoryHidden] = useState(false);
+    const [historyHidden, setHistoryHidden] = useState(true);
     const [dataHidden, setDataHidden] = useState(false);
 
     const savedRequests = useSelector((state: CounterState) => state.counter.value)
