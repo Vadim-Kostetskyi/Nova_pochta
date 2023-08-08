@@ -16,7 +16,7 @@ interface Information{
     }
 }
 
-export const getInfo: any = createAsyncThunk('get info', async (information: Information) => {
+export const getInfo: any = createAsyncThunk('get info', async (information: Information) => { 
     try {
         const { data } = await axios.post('/', information);
         return data;

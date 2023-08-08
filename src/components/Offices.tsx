@@ -3,27 +3,19 @@ import { useDispatch, useSelector } from "react-redux"
 import type { Dispatch } from 'redux'
 import { useState } from "react"
 
-
+import { requestCity, requestRandomCity } from "../requests/requests"
 import { getStreet } from "../redux/operation"
 import { PostData } from "../redux/store"
 
 const Offices: React.FunctionComponent = () => {
     const dispatch: Dispatch = useDispatch()
     const [address, setAddress] = useState<PostData[]>([]);
-      const [formData, setFormData] = React.useState<string>('');
+      const [formData, setFormData] = useState<string>('');
 
 
     useEffect(() => {
-        dispatch(getStreet(
-           {
-            "apiKey": process.env.SECRET_KEY,
-            "modelName": "Address",
-            "calledMethod": "getWarehouses",
-            "methodProperties": {
-                                    "Limit" : "20"
-                                }
-            }
-        )).then((res: {payload: {data: PostData[]}}) => setAddress(res.payload.data))
+        dispatch(getStreet(requestRandomCity(process.env.SECRET_KEY)))
+            .then((res: { payload: { data: PostData[] } }) => setAddress(res.payload.data))
     }, [])
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,17 +24,8 @@ const Offices: React.FunctionComponent = () => {
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        
-        dispatch(getStreet(
-           {
-            "apiKey": process.env.SECRET_KEY,
-            "modelName": "Address",
-            "calledMethod": "getWarehouses",
-            "methodProperties": {
-                                    "CityName" : formData,
-                                }
-            }
-        )).then((res: { payload: { data: PostData[] } }) => setAddress(res.payload.data))
+        dispatch(getStreet(requestCity(process.env.SECRET_KEY, "Address", "getWarehouses", formData)))
+            .then((res: { payload: { data: PostData[] } }) => setAddress(res.payload.data))
   }    
 
     return (

@@ -110,7 +110,20 @@ p {
     width: 150px;
   }
 }
+.icon-hide {
+  width: 25px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
 .history-box {
+  overflow: hidden;
+}
+.hidden {
+  max-height: 0;
+}
+.history-header {
   display: flex;
   justify-content: space-between;
 }
@@ -129,4 +142,8 @@ p {
 
 .city-form {
   margin-bottom: 15px;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
