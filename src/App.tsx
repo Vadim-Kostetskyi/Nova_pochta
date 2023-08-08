@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import Parcel from './Parcel';
-import Offices from './Offices';
+import Parcel from './components/Parcel';
+import Offices from './components/Offices';
 import './App.css';
 
-function App() {
+const App: React.FunctionComponent = () => {
+  const [find, setFind] = useState<boolean>(true);
+
+  const switching = (el: React.MouseEvent<HTMLButtonElement>) => {
+    if (el.currentTarget.className === 'check') {
+      setFind(true)
+    }
+    else {
+      setFind(false)
+    }
+  }
+  
   return (
-    <div className="App">
+    <div className="app">
       <div className='operation'>
-      <button className='check'>Перевірити ТТН</button>
-        <button className='offices'>Список відділень</button>
+        <button className='check' onClick={switching}>Перевірити ТТН</button>
+        <button className='offices' onClick={switching}>Список відділень</button>
       </div>
-      {/* <Parcel /> */}
-      <Offices/>
+      {find ? <Parcel/> : <Offices/>}
     </div>
   );
 }
