@@ -15,14 +15,17 @@ const Parcel: React.FunctionComponent = () => {
     const [ttn, setTtn] = useState<number[]>([])
     const [status, setStatus] = useState<string>('')
     const [formData, setFormData] = useState<number>(0);
-    const [historyHidden, setHistoryHidden] = useState(true);
-    const [dataHidden, setDataHidden] = useState(false);
+    const [historyHidden, setHistoryHidden] = useState<boolean>(true);
+    const [dataHidden, setDataHidden] = useState<boolean>(false);
 
     const savedRequests = useSelector((state: CounterState) => state.counter.value)
 
     useEffect(() => {
+        setHistoryHidden(window.innerWidth < 768);        
+    }, []);
+    
+    useEffect(() => {
         setTtn(savedRequests)
-        
     }, [savedRequests])
     
     const clearList = () => {
@@ -35,8 +38,6 @@ const Parcel: React.FunctionComponent = () => {
      const handleToggleData = () => {        
         setDataHidden((prevState) => !prevState);
     };
-
-
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
          const inputElement = event.target;
